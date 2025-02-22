@@ -1,0 +1,9 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: radial-gradient(circle, #1a4db4 0%, #253352 40%, #1a202c 100%);
+  color: white;
+}

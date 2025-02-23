@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
-import Pagelayout1 from "./components/userprofile/chat/UserChat.jsx";
+// import Pagelayout1 from "./components/userprofile/chat/UserChat.jsx";
 import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/AdminChat.jsx";
 import HomeContainer from "./components/home/HomeContainer.js";
 import LayoutDashboardContainer from "./LayoutDashboardContainer.js";
@@ -56,7 +56,7 @@ function App({ isAuthenticated, user, updateUser }) {
 					{/* <Route path="user-profile" element={<UserProfile />} /> */}
 					<Route path="update-profile" element={<UpdateUserForm />} />
 					<Route path="user-trades" element={<Trades />} />
-					<Route path="user-chat" element={<Pagelayout1 />} />
+					{/* <Route path="user-chat" element={<Pagelayout1 />} /> */}
 					{/* <Route path="admin-chat" element={<AdminChatBox />} /> */}
 				</Route>
 				<Route path="dashboard" element={<LayoutDashboardContainer />}>

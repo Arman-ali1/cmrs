@@ -16,6 +16,10 @@ function Sidebar() {
 		navigate("/dashboard/all-trades");
 	};
 
+	const handleChat = () => {
+		navigate("/admin-chat");
+	}
+
 	return (
 		<aside
 			style={{
@@ -83,35 +87,20 @@ function Sidebar() {
 									TradsList All
 								</button>
 							</li>
-							{/* <li>
-                <a href="#" className="flex items-center text-sm p-2 hover:text-gray-300">
-                  <ChevronRightIcon className="w-4 h-4 mr-2" />
-                  eCommerce
-                </a>
-              </li> */}
+							<li>
+								<button
+									onClick={handleChat}
+									className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg"
+								>
+									<ChevronRightIcon className="w-4 h-4 mr-2" />
+									chats
+								</button>
+							</li>
+						
 						</ul>
 					</li>
 
-					{/* <li>
-            <a href="#" className="flex items-center p-3 rounded-lg hover:bg-blue-900 transition">
-              <Squares2X2Icon className="w-5 h-5 mr-3" />
-              <span>Widgets</span>
-            </a>
-            <ul className="pl-8 space-y-1">
-              <li>
-                <a href="#" className="flex items-center text-sm p-2 hover:text-gray-300">
-                  <ChevronRightIcon className="w-4 h-4 mr-2" />
-                  Data
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center text-sm p-2 hover:text-gray-300">
-                  <ChevronRightIcon className="w-4 h-4 mr-2" />
-                  Static
-                </a>
-              </li>
-            </ul>
-          </li> */}
+               
 				</ul>
 			</nav>
 		</aside>

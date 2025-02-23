@@ -15,14 +15,17 @@ import Trades from "./components/UserProfile/trads/Trades";
 import Main from "./components/main/Main";
 import AllTrades from "./components/adminsidetrads/alltrades/AllTrades";
 import AddUser from "./components/adminadduser/AddUser";
-import UserChatBox from "./components/UserProfile/chat/UserChatBox";
+// import UserChatBox from "./components/UserProfile/chat/UserChatBox";
 // import userTrades from "./components/UserProfile/trads/Trades";
 
 import Home from "./components/home/Home";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
-import AdminChatBox from "./components/adminsidetrads/adminsidetradslist/chat/AdminChatBox";
+// import AdminChatBox from "./components/adminsidetrads/adminsidetradslist/chat/AdminChatBox";
+import Pagelayout1 from "./components/UserProfile/chat/userChat.jsx";
+import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/adminChat.jsx";
+
 
 function App({ isAuthenticated, user, updateUser }) {
 	useEffect(() => {
@@ -37,8 +40,9 @@ function App({ isAuthenticated, user, updateUser }) {
 	return (
 		<Router>
 			<Routes>
-			<Route path="admin-chat" element={<AdminChatBox />} />
-			<Route path="user-chat" element={<UserChatBox />} />
+			
+			<Route path="user-chat" element={<Pagelayout1 />} />
+			<Route path="admin-chat" element={<Pagelayout2/>} />
 				<Route
 					path="/"
 					element={
@@ -70,6 +74,7 @@ function App({ isAuthenticated, user, updateUser }) {
 					<Route path="user-profile" element={<UserProfile />} />
 					<Route path="update-profile" element={<UpdateUserForm />} />
 					<Route path="user-trades" element={<Trades />} />
+					{/* <Route path="admin-chat" element={<AdminChatBox />} /> */}
 					
 				</Route>
 				<Route

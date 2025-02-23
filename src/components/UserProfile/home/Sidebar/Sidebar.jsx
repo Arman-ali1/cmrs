@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
 
+
+  const chatHandle = () => {
+    window.location.href = "/user-chat";
+  }
+
   return (
     <aside
     style={{
@@ -64,6 +69,10 @@ function Sidebar() {
                   <ChevronRightIcon className="w-4 h-4 mr-2" />
                   Trad List
                 </Link>
+                <button onClick={chatHandle}  className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg">
+                  <ChevronRightIcon className="w-4 h-4 mr-2" />
+                  Chat
+                </button>
               </li>
               {/* <li>
                 <a href="#" className="flex items-center text-sm p-2 hover:text-gray-300">

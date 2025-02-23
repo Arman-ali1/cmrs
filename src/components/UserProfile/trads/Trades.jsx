@@ -109,8 +109,9 @@ function Trades() {
 
   // For the "Help" button, perform a help action (here, just an alert).
   const handleHelp = (trade) => {
-    alert(`Help action triggered for trade ${trade.id}`);
+    window.location.href = `/user-chat`;
     // You can add additional logic for the help action here.
+    
   };
 
   if (loading) {

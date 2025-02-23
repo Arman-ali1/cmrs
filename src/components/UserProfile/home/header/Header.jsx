@@ -27,6 +27,11 @@ function Header({ logout }) {
 		navigate("/update-profile");
 	};
 
+	const handleLogout = () => {
+		logout();
+		navigate("");
+	};
+
 	return (
 		<header className="ml-64">
 			<nav className="navbar navbar-expand flex items-center justify-between gap-4 bg-transparent px-4">
@@ -95,7 +100,7 @@ function Header({ logout }) {
 								/>
 							</DropdownToggle>
 							<DropdownMenu className="dropdown-menu-end">
-								<DropdownItem onClick={logout}>
+								<DropdownItem onClick={handleLogout}>
 									Log out
 								</DropdownItem>
 								<DropdownItem onClick={handleUpdate}>

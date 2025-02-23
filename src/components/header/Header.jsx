@@ -21,12 +21,12 @@ import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 
 function Header({ logout }) {
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 
-	// const handleLogOut = () => {
-	// 	localStorage.clear();
-	// 	navigate("/");
-	// };
+	const handleLogout = () => {
+		logout();
+		navigate("/");
+	};
 
 	return (
 		<header className="ml-64">
@@ -96,7 +96,7 @@ function Header({ logout }) {
 								/>
 							</DropdownToggle>
 							<DropdownMenu className="dropdown-menu-end">
-								<DropdownItem onClick={logout}>
+								<DropdownItem onClick={handleLogout}>
 									Log out
 								</DropdownItem>
 								<DropdownItem>Update</DropdownItem>

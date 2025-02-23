@@ -5,8 +5,8 @@ import { login } from "../../app/store/actions/userAuthActions";
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-	login: (credentials) => {
-		dispatch(login(credentials));
+	login: async (credentials) => {
+		await dispatch(login(credentials));
 	},
 });
 

@@ -17,8 +17,8 @@ function Sidebar() {
 	};
 
 	const handleChat = () => {
-		navigate("/admin-chat");
-	}
+		navigate("admin-chat");
+	};
 
 	return (
 		<aside
@@ -96,11 +96,8 @@ function Sidebar() {
 									chats
 								</button>
 							</li>
-						
 						</ul>
 					</li>
-
-               
 				</ul>
 			</nav>
 		</aside>

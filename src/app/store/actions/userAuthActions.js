@@ -30,7 +30,7 @@ export const login = (credentials) => {
 			const { token, user } = response.data;
 			dispatch(loginSuccess(user));
 			Cookies.set("token", token);
-			return Promise.resolve(user.role_id);
+			return user.role_id;
 		} catch (error) {
 			dispatch(loginFailure(error.response.data.message));
 			return Promise.reject(error.response.data.message);

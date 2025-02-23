@@ -3,12 +3,14 @@ import LoginContainer from "../login/LoginContainer";
 import { useNavigate } from "react-router-dom";
 import { redirectUserBasedOnRole } from "../../utils/userAuthUtils";
 
-function Home({ isAuthenticated, role }) {
+function Home({ isAuthenticated, user }) {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		redirectUserBasedOnRole(isAuthenticated, role, navigate);
-	}, [isAuthenticated, role, navigate]);
+		isAuthenticated &&
+			user &&
+			redirectUserBasedOnRole(isAuthenticated, user?.role_id, navigate);
+	}, [isAuthenticated, user, navigate]);
 
 	return (
 		<div className="flex flex-col items-center justify-center h-screen ">

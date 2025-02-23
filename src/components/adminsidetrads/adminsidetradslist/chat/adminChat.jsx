@@ -1,16 +1,12 @@
-import React from 'react'
-import Header from '../../../header/Header'
-import Sidebar from '../../../Sidebar/Sidebar'
-import AdminChatBox from './AdminChatBox'
+import React from "react";
+import AdminChatBox from "./AdminChatBox";
 
-function adminChat() {
-  return (
-    <div>
-      <Header />
-      <Sidebar />
-      <AdminChatBox />
-    </div>
-  )
+function AdminChat() {
+	return (
+		<div>
+			<AdminChatBox />
+		</div>
+	);
 }
 
-export default adminChat
+export default AdminChat;

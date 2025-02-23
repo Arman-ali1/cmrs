@@ -19,39 +19,31 @@ import AddUser from "./components/adminadduser/AddUser";
 // import userTrades from "./components/UserProfile/trads/Trades";
 
 import Home from "./components/home/Home";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 // import AdminChatBox from "./components/adminsidetrads/adminsidetradslist/chat/AdminChatBox";
-import Pagelayout1 from "./components/UserProfile/chat/userChat.jsx";
-import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/adminChat.jsx";
-
+import Pagelayout1 from "./components/UserProfile/chat/UserChat.jsx";
+import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/AdminChat.jsx";
+import HomeContainer from "./components/home/HomeContainer.js";
 
 function App({ isAuthenticated, user, updateUser }) {
+	const [token, setToken] = useState(Cookies.get("token"));
+
 	useEffect(() => {
-		const token = Cookies.get("accessToken");
-		console.log(token);
-		if (token) {
-			const decodedUser = jwtDecode(token);
+		var decodedUser;
+		var cookie = Cookies.get("token");
+		setToken(cookie);
+		if (cookie) {
+			decodedUser = jwtDecode(cookie);
 			updateUser(decodedUser);
 		}
-	}, [Cookies, updateUser]);
+	}, [isAuthenticated, updateUser]);
 
 	return (
 		<Router>
 			<Routes>
-			
-			<Route path="user-chat" element={<Pagelayout1 />} />
-			<Route path="admin-chat" element={<Pagelayout2/>} />
-				<Route
-					path="/"
-					element={
-						<Home
-							isAuthenticated={isAuthenticated}
-							role={user?.role_id}
-						/>
-					}
-				/>
+				<Route path="/" element={<HomeContainer />} />
 				<Route
 					path="/sign-up"
 					element={
@@ -64,26 +56,28 @@ function App({ isAuthenticated, user, updateUser }) {
 				<Route
 					path=""
 					element={
-						isAuthenticated && user.role_id === 3 ? (
-							<LayoutUser />
+						token ? (
+							isAuthenticated &&
+							user?.role_id === 3 && <LayoutUser />
 						) : (
-							<Navigate to="/" />
+							<Home />
 						)
 					}
 				>
 					<Route path="user-profile" element={<UserProfile />} />
 					<Route path="update-profile" element={<UpdateUserForm />} />
 					<Route path="user-trades" element={<Trades />} />
+					<Route path="user-chat" element={<Pagelayout1 />} />
 					{/* <Route path="admin-chat" element={<AdminChatBox />} /> */}
-					
 				</Route>
 				<Route
 					path="dashboard"
 					element={
-						isAuthenticated && user.role_id === 2 ? (
-							<LayoutDashboard />
+						token ? (
+							isAuthenticated &&
+							user?.role_id === 2 && <LayoutDashboard />
 						) : (
-							<Navigate to="/" />
+							<Home />
 						)
 					}
 				>
@@ -95,6 +89,7 @@ function App({ isAuthenticated, user, updateUser }) {
 					<Route path="user-trades" element={<Trades />} />
 					<Route path="all-trades" element={<AllTrades />} />
 					<Route path="add-user" element={<AddUser />} />
+					<Route path="admin-chat" element={<Pagelayout2 />} />
 				</Route>
 			</Routes>
 		</Router>

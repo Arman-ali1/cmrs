@@ -7,7 +7,9 @@ function SignIn({ isAuthenticated, role }) {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		redirectUserBasedOnRole(isAuthenticated, role, navigate);
+		if (isAuthenticated && role) {
+			redirectUserBasedOnRole(isAuthenticated, role, navigate);
+		}
 	}, [isAuthenticated, role, navigate]);
 
 	return (

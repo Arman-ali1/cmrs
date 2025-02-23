@@ -28,6 +28,7 @@ import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/Adm
 import HomeContainer from "./components/home/HomeContainer.js";
 import LayoutDashboardContainer from "./LayoutDashboardContainer.js";
 import LayoutUserContainer from "./LayoutUserContainer.js";
+import TradesList from "./components/UserProfile/trads/tradslist/TradesList.jsx";
 
 function App({ isAuthenticated, user, updateUser }) {
 	const [token, setToken] = useState(Cookies.get("token"));
@@ -69,7 +70,7 @@ function App({ isAuthenticated, user, updateUser }) {
 						element={<UpdateUserFormAdmin />}
 					/>
 					<Route path="user-trades" element={<Trades />} />
-					<Route path="all-trades" element={<AllTrades />} />
+					<Route path="all-trades" element={<TradesList />} />
 					<Route path="add-user" element={<AddUser />} />
 					<Route path="admin-chat" element={<Pagelayout2 />} />
 				</Route>

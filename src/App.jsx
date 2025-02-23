@@ -7,7 +7,7 @@ import {
 import SignIn from "./components/home/SignIn";
 
 // import UserProfile from "./components/userprofile/UserProfile";
-import UserProfile from "./components/UserProfile/UserProfile.jsx";
+// import UserProfile from "./components/UserProfile/UserProfile.jsx";
 import UpdateUserForm from "./components/UserProfile/home/updateprofile/UpdateUserForm";
 import UpdateUserFormAdmin from "./components/updateprofile/UpdateUserForm";
 
@@ -53,7 +53,7 @@ function App({ isAuthenticated, user, updateUser }) {
 					}
 				/>
 				<Route path="" element={<LayoutUserContainer />}>
-					<Route path="user-profile" element={<UserProfile />} />
+					{/* <Route path="user-profile" element={<UserProfile />} /> */}
 					<Route path="update-profile" element={<UpdateUserForm />} />
 					<Route path="user-trades" element={<Trades />} />
 					<Route path="user-chat" element={<Pagelayout1 />} />

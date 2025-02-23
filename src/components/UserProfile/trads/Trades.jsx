@@ -123,7 +123,7 @@ function Trades() {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5   ">
       <h1 className="text-center text-white mb-4">Welcome to Trades List</h1>
       {message && <div className="alert alert-info">{message}</div>}
 

@@ -27,11 +27,11 @@ function Sidebar() {
   }, []);
 
   const handleTrades = () => {
-    navigate("/dashboard/all-trades");
+    navigate("/user-trades");
   };
 
   const handleChat = () => {
-    navigate("admin-chat");
+    navigate("/user-chat");
   };
 
   return (
@@ -105,11 +105,11 @@ function Sidebar() {
               <ul className="pl-8 space-y-1">
                 <li>
                   <Link
-                    to="/dashboard"
+                    to="/user-profile"
                     className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg"
                   >
                     <ChevronRightIcon className="w-4 h-4 mr-2" />
-                    User Management
+                    profile
                   </Link>
                 </li>
                 <li>
@@ -118,7 +118,7 @@ function Sidebar() {
                     className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg"
                   >
                     <ChevronRightIcon className="w-4 h-4 mr-2" />
-                    TradsList All
+                    TradsList 
                   </button>
                 </li>
                 <li>

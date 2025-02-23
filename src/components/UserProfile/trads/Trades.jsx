@@ -24,7 +24,7 @@ function Trades() {
     const fetchTrades = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/v1/trade/getalltrades"
+          "https://csrm.onrender.com/api/v1/trades"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

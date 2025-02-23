@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import SignIn from "./components/home/SignIn";
 
-import UserProfile from "./components/userprofile/UserProfile";
+// import UserProfile from "./components/userprofile/UserProfile";
+import UserProfile from "./components/UserProfile/UserProfile.jsx";
 import UpdateUserForm from "./components/UserProfile/home/updateprofile/UpdateUserForm";
 import UpdateUserFormAdmin from "./components/updateprofile/UpdateUserForm";
 

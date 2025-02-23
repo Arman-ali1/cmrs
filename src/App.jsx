@@ -13,7 +13,7 @@ import UpdateUserFormAdmin from "./components/updateprofile/UpdateUserForm";
 // import Trades from "./components/adminsidetrads/adminsidetradslist/Adminsidetradslist";
 import Trades from "./components/UserProfile/trads/Trades";
 import Main from "./components/main/Main";
-import AllTrades from "./components/adminsidetrads/adminsidetradslist/Adminsidetradslist.jsx";
+// import AllTrades from "./components/adminsidetrads/adminsidetradslist/Adminsidetradslist.jsx";
 import AddUser from "./components/adminadduser/AddUser";
 // import UserChatBox from "./components/UserProfile/chat/UserChatBox";
 // import userTrades from "./components/UserProfile/trads/Trades";

@@ -14,10 +14,10 @@ const AdminChatBox = () => {
 
   useEffect(() => {
     // Establish a single socket connection
-    socketRef.current = io('http://localhost:7000');
+    socketRef.current = io('https://crms-chat-backend.onrender.com');
 
     // Fetch all messages for this conversation
-    fetch('http://localhost:7000/api/chats')
+    fetch('https://crms-chat-backend.onrender.com/api/chats')
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter(

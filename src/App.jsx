@@ -15,9 +15,6 @@ import Trades from "./components/UserProfile/trads/Trades";
 import Main from "./components/main/Main";
 // import AllTrades from "./components/adminsidetrads/adminsidetradslist/Adminsidetradslist.jsx";
 import AddUser from "./components/adminadduser/AddUser";
-
-
-
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";

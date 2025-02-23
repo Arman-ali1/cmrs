@@ -5,25 +5,25 @@ import {
 	Navigate,
 } from "react-router-dom";
 import SignIn from "./components/home/SignIn";
-import LayoutUser from "./LayoutUser";
-import LayoutDashboard from "./LayoutDashboard";
+// import LayoutUser from "./LayoutUser";
+// import LayoutDashboard from "./LayoutDashboard";
 import UserProfile from "./components/UserProfile/UserProfile";
 import UpdateUserForm from "./components/UserProfile/home/updateprofile/UpdateUserForm";
 import UpdateUserFormAdmin from "./components/updateprofile/UpdateUserForm";
 // import Trades from "./components/adminsidetrads/adminsidetradslist/Adminsidetradslist";
 import Trades from "./components/UserProfile/trads/Trades";
 import Main from "./components/main/Main";
-import AllTrades from "./components/adminsidetrads/alltrades/AllTrades";
+import AllTrades from "./components/adminsidetrads/adminsidetradslist/Adminsidetradslist.jsx";
 import AddUser from "./components/adminadduser/AddUser";
 // import UserChatBox from "./components/UserProfile/chat/UserChatBox";
 // import userTrades from "./components/UserProfile/trads/Trades";
 
-import Home from "./components/home/Home";
+// import Home from "./components/home/Home";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 // import AdminChatBox from "./components/adminsidetrads/adminsidetradslist/chat/AdminChatBox";
-import Pagelayout1 from "./components/UserProfile/chat/UserChat.jsx";
+import Pagelayout1 from "./components/userprofile/chat/UserChat.jsx";
 import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/AdminChat.jsx";
 import HomeContainer from "./components/home/HomeContainer.js";
 import LayoutDashboardContainer from "./LayoutDashboardContainer.js";

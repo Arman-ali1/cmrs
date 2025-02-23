@@ -7,7 +7,7 @@ import {
 import SignIn from "./components/home/SignIn";
 // import LayoutUser from "./LayoutUser";
 // import LayoutDashboard from "./LayoutDashboard";
-import UserProfile from "./components/UserProfile/UserProfile";
+import UserProfile from "./components/userprofile/UserProfile";
 import UpdateUserForm from "./components/UserProfile/home/updateprofile/UpdateUserForm";
 import UpdateUserFormAdmin from "./components/updateprofile/UpdateUserForm";
 // import Trades from "./components/adminsidetrads/adminsidetradslist/Adminsidetradslist";

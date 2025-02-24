@@ -24,7 +24,7 @@ import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/Adm
 import HomeContainer from "./components/home/HomeContainer.js";
 import LayoutDashboardContainer from "./LayoutDashboardContainer.js";
 import LayoutUserContainer from "./LayoutUserContainer.js";
-import TradesList from "./components/UserProfile/trads/tradslist/TradesList.jsx";
+import TradesList from "./components/UserProfile/trads/Trades.jsx";
 
 function App({ isAuthenticated, user, updateUser }) {
 	const [token, setToken] = useState(Cookies.get("token"));

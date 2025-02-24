@@ -1,16 +1,26 @@
 // AdminChatBox.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
+import { useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 // Hard-coded admin and target user details
 const adminId = 'A1';
 const adminUsername = 'Admin';
-const targetUserId = 'U1';
+// const targetUserId = 'U1';
 
 const AdminChatBox = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const socketRef = useRef(null);
+  const location = useLocation();
+  const { userId } = location.state || {};
+  const [targetUserId, setTargetUserId] = useState(userId);
+console.log("User in admin side ID",userId);
+const userdata = useSelector(state => state);
+// console.log("User Profile",useSelector(state => state));
+console.log(" admin Profile id",userdata.userAuth.user.user_id);
+// const [adminId, setAdminId] = useState(userdata.userAuth.user.user_id);
 
   useEffect(() => {
     // Establish a single socket connection

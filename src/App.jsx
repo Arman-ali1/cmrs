@@ -7,7 +7,7 @@ import {
 import SignIn from "./components/home/SignIn";
 
 // import UserProfile from "./components/userprofile/UserProfile";
-// import UserProfile from "./components/UserProfile/UserProfile.jsx";
+import UserProfile from "./components/UserProfile/UserProfile.jsx";
 import UpdateUserForm from "./components/UserProfile/home/updateprofile/UpdateUserForm";
 import UpdateUserFormAdmin from "./components/updateprofile/UpdateUserForm";
 
@@ -19,8 +19,8 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
-// import Pagelayout1 from "./components/userprofile/chat/UserChat.jsx";
-import Pagelayout2 from "../src/components/adminsidetrads/adminsidetradslist/chat/AdminChat.jsx";
+import Pagelayout1 from "./components/userprofile/chat/UserChat.jsx";
+import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/AdminChat.jsx";
 import HomeContainer from "./components/home/HomeContainer.js";
 import LayoutDashboardContainer from "./LayoutDashboardContainer.js";
 import LayoutUserContainer from "./LayoutUserContainer.js";
@@ -53,10 +53,10 @@ function App({ isAuthenticated, user, updateUser }) {
 					}
 				/>
 				<Route path="" element={<LayoutUserContainer />}>
-					{/* <Route path="user-profile" element={<UserProfile />} /> */}
+					<Route path="user-profile" element={<UserProfile />} />
 					<Route path="update-profile" element={<UpdateUserForm />} />
 					<Route path="user-trades" element={<Trades />} />
-					{/* <Route path="user-chat" element={<Pagelayout1 />} /> */}
+					<Route path="user-chat" element={<Pagelayout1 />} />
 					{/* <Route path="admin-chat" element={<AdminChatBox />} /> */}
 				</Route>
 				<Route path="dashboard" element={<LayoutDashboardContainer />}>

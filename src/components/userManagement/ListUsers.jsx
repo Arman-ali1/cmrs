@@ -14,6 +14,12 @@ function ListUsers({ user, onUpdate }) {
 	const handleTrades = () => {
 		navigate("/dashboard/user-trades");
 	};
+
+	const handleChat = () => {
+		console.log("Chat user id", user.id);
+		navigate('/dashboard/admin-chat', { state: { userId: user.id } });
+		
+	}
 	return (
 		<div className="col-md-4 mb-4">
 			<div
@@ -60,6 +66,13 @@ function ListUsers({ user, onUpdate }) {
 						onClick={handleTrades}
 					>
 						TradeList
+					</button>
+					<button
+						className="btn btn-warning btn-sm ms-2"
+						// onClick={() => onUpdate(user.id)}
+						onClick={handleChat}
+					>
+						Chat
 					</button>
 				</div>
 			</div>

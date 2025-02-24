@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function UserProfile() {
 	const navigate = useNavigate();
@@ -19,6 +20,9 @@ export default function UserProfile() {
 	const handleEdit = () => {
 		navigate("/update-profile");
 	};
+	const userdata = useSelector(state => state);
+// console.log("User Profile",useSelector(state => state));
+console.log("User Profile",userdata.userAuth.user.user_id);
 
 	return (
 		<div className="container ml-32 w-100">

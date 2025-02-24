@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
+import { useSelector, useDispatch } from 'react-redux';
 
 // Hard-coded user and target admin details
-const userId = 'U1';
+// const userId = 'U1';
 const userUsername = 'User';
 const targetAdminId = 'A1';
 
@@ -10,6 +11,11 @@ const UserChatBox = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const socketRef = useRef(null);
+
+  const userdata = useSelector(state => state);
+  // console.log("User Profile",useSelector(state => state));
+  console.log("User Profile",userdata.userAuth.user.user_id);
+  const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
 
   useEffect(() => {
     // Establish a single socket connection

@@ -20,7 +20,7 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
 import Pagelayout1 from "./components/UserProfile/chat/UserChatBox.jsx";
-import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/AdminChat.jsx";
+import Pagelayout2 from "./components/adminsidetrads/adminsidetradslist/chat/AdminChatBox.jsx";
 import HomeContainer from "./components/home/HomeContainer.js";
 import LayoutDashboardContainer from "./LayoutDashboardContainer.js";
 import LayoutUserContainer from "./LayoutUserContainer.js";

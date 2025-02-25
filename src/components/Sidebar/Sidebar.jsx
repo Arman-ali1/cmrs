@@ -29,6 +29,9 @@ function Sidebar() {
   const handleTrades = () => {
     navigate("/dashboard/all-trades");
   };
+  const handlePortfolio = () => {
+    navigate("/dashboard/portfolio");
+  };
 
   const handleChat = () => {
     navigate("admin-chat");
@@ -122,6 +125,13 @@ function Sidebar() {
                   </button>
                 </li>
                 <li>
+                  <button
+                    onClick={handlePortfolio}
+                    className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg"
+                  >
+                    <ChevronRightIcon className="w-4 h-4 mr-2" />
+                    Portfolio
+                  </button>
                   <button
                     onClick={handleChat}
                     className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg"

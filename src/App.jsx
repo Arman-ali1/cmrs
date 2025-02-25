@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import SignIn from "./components/home/SignIn";
 
-// import UserProfile from "./components/userprofile/UserProfile";
 import UserProfile from "./components/UserProfile/UserProfile.jsx";
 import UpdateUserForm from "./components/UserProfile/home/updateprofile/UpdateUserForm";
 import UpdateUserFormAdmin from "./components/updateprofile/UpdateUserForm";
@@ -25,6 +24,7 @@ import HomeContainer from "./components/home/HomeContainer.js";
 import LayoutDashboardContainer from "./LayoutDashboardContainer.js";
 import LayoutUserContainer from "./LayoutUserContainer.js";
 import TradesList from "./components/UserProfile/trads/Trades.jsx";
+import Portfolio from "./components/UserProfile/portfolio/Portfolio.jsx";
 
 function App({ isAuthenticated, user, updateUser }) {
 	const [token, setToken] = useState(Cookies.get("token"));
@@ -56,6 +56,8 @@ function App({ isAuthenticated, user, updateUser }) {
 					<Route path="user-profile" element={<UserProfile />} />
 					<Route path="update-profile" element={<UpdateUserForm />} />
 					<Route path="user-trades" element={<Trades />} />
+					<Route path="user-portfolio" element={<Portfolio />} />
+
 					<Route path="user-chat" element={<Pagelayout1 />} />
 					{/* <Route path="admin-chat" element={<AdminChatBox />} /> */}
 				</Route>

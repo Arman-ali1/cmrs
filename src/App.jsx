@@ -70,6 +70,7 @@ function App({ isAuthenticated, user, updateUser }) {
 					<Route path="user-trades" element={<Trades />} />
 					<Route path="all-trades" element={<TradesList />} />
 					<Route path="add-user" element={<AddUser />} />
+					<Route path="portfolio" element={<Portfolio />} />
 					<Route path="admin-chat" element={<Pagelayout2 />} />
 				</Route>
 			</Routes>

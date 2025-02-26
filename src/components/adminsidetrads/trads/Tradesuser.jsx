@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Trade.css";
-import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+// import { useSelector, useDispatch } from 'react-redux';
 
-function Trades() {
+function Tradesuser() {
 
-	  const userdata = useSelector(state => state);
-	  // console.log("User Profile",useSelector(state => state));
-	  console.log("User Profile",userdata.userAuth.user.user_id);
-	  const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
+	//   const userdata = useSelector(state => state);
+	//   // console.log("User Profile",useSelector(state => state));
+	//   console.log("User Profile",userdata.userAuth.user.user_id);
+	//   const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
+	const location = useLocation();
+	  const { userId } = location.state || {};
 	const [trades, setTrades] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -339,4 +342,4 @@ function Trades() {
 	);
 }
 
-export default Trades;
+export default Tradesuser;

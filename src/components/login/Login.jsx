@@ -41,29 +41,69 @@ function Login({ login }) {
 					onSubmit={handleSubmit}
 					className="mt-3 space-y-6"
 				>
-					<TextField
-						required
-						fullWidth
-						id="email"
-						label="Email Address"
-						name="email"
-						autoComplete="email"
-						value={formData.email}
-						onChange={handleChange}
-						InputProps={{ style: { color: "white" } }}
-					/>
-					<TextField
-						required
-						fullWidth
-						name="password"
-						label="Password"
-						type="password"
-						id="password"
-						autoComplete="current-password"
-						value={formData.password}
-						onChange={handleChange}
-						InputProps={{ style: { color: "white" } }}
-					/>
+<TextField
+  required
+  fullWidth
+  id="email"
+  label="Email Address"
+  name="email"
+  autoComplete="email"
+  value={formData.email}
+  onChange={handleChange}
+  variant="outlined"
+  InputProps={{
+    style: { color: "white" },
+  }}
+  InputLabelProps={{
+    shrink: true,
+    style: { color: "blue" },
+  }}
+  sx={{
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'blue',
+      },
+      '&:hover fieldset': {
+        borderColor: 'blue',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'blue',
+      },
+    },
+  }}
+/>
+
+<TextField
+  required
+  fullWidth
+  name="password"
+  label="Password"
+  type="password"
+  id="password"
+  autoComplete="current-password"
+  value={formData.password}
+  onChange={handleChange}
+  variant="outlined" // use outlined variant for visible border
+  InputProps={{ style: { color: "white" } }}
+  InputLabelProps={{
+    shrink: true, // keeps the label shrunk and visible
+    style: { color: "blue" },
+  }}
+  sx={{
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'blue', // default border color
+      },
+      '&:hover fieldset': {
+        borderColor: 'blue', // border color on hover
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'blue', // border color when focused
+      },
+    },
+  }}
+/>
+
 
 					<Button
 						type="submit"

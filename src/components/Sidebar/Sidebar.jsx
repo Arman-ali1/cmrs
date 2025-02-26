@@ -27,10 +27,10 @@ function Sidebar() {
   }, []);
 
   const handleTrades = () => {
-    navigate("/dashboard/all-trades");
+    navigate("/dashboard/all-trades-user");
   };
   const handlePortfolio = () => {
-    navigate("/dashboard/portfolio");
+    navigate("/dashboard/all-portfolio");
   };
 
   const handleChat = () => {

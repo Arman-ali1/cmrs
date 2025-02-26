@@ -11,9 +11,14 @@ function ListUsers({ user, onUpdate }) {
 		navigate("/dashboard/update-user");
 	};
 
+	// const handleTrades = () => {
+	// 	navigate("/dashboard/user-trades");
+	// };
 	const handleTrades = () => {
-		navigate("/dashboard/user-trades");
-	};
+		console.log("Trades user id", user.id);
+		navigate("/dashboard/user-trades", { state: { userId: user.id } });
+	  };
+	  
 
 	const handleChat = () => {
 		console.log("Chat user id", user.id);

@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Portfolio.css";
 import { useSelector } from "react-redux";
 
-function Portfolio() {
+function Portfolioall() {
   const userdata = useSelector((state) => state);
   console.log("User Profile", userdata.userAuth.user.user_id);
   const [userId] = useState(userdata.userAuth.user.user_id);
@@ -31,7 +31,7 @@ function Portfolio() {
     const fetchPortfolios = async () => {
       try {
         const response = await fetch(
-          `https://csrm.onrender.com/api/v1/portfolio/${userId}`
+          `https://csrm.onrender.com/api/v1/portfolio/all-portfolio`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -342,4 +342,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default Portfolioall;

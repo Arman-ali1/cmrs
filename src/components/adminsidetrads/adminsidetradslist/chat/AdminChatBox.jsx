@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import Tradesuser from '../../trads/Tradesuser';
 
 // Hard-coded admin and target user details
 const adminId = 'A1';
@@ -70,6 +71,8 @@ console.log(" admin Profile id",userdata.userAuth.user.user_id);
   };
 
   return (
+    <div className='flex ' >
+      
     <div
       className={`
         min-h-screen w-full
@@ -78,7 +81,7 @@ console.log(" admin Profile id",userdata.userAuth.user.user_id);
         text-white
       `}
     >
-      <div className="w-80 h-96 border-2 shadow-2xl shadow-blue-400  border-blue-700 rounded flex flex-col">
+      <div className="ml-80  w-80 h-96 border-2 shadow-2xl shadow-blue-400  border-blue-700 rounded flex flex-col">
         {/* Chat Messages Container */}
         <div className="flex-1 p-3 overflow-y-auto bg-blue-950 text-black">
           {messages.length > 0 ? (
@@ -124,6 +127,11 @@ console.log(" admin Profile id",userdata.userAuth.user.user_id);
           </button>
         </form>
       </div>
+    </div>
+    <div className='lg:mr-28 lg:pr20'>
+
+     <Tradesuser />
+    </div>
     </div>
   );
 };

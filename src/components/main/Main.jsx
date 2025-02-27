@@ -5,9 +5,23 @@ import Avatar from "../../assets/images/avatars/01.png";
 import WelcomeImage from "../../assets/images/gallery/welcome-back-3.png";
 import AddUserForm from "../userManagement/AddUserForm";
 import ListUsers from "../userManagement/ListUsers";
+import { useSelector, useDispatch } from 'react-redux';
 
 function Main() {
 
+
+  const userdata = useSelector((state) => state);
+  console.log("User Profile", userdata.userAuth.user.user_id);
+  
+  // Use destructuring for readability
+  const { user_id, first_name, last_name } = userdata.userAuth.user;
+  
+  // State for user ID
+  const [userId, setUserId] = useState(user_id);
+  
+  // State for admin's full name (first + last)
+  const [adminName, setAdminName] = useState(`${first_name} ${last_name}`);
+  
   const navigate = useNavigate();
   const [showAddUser, setShowAddUser] = useState(false);
   const [showListUsers, setShowListUsers] = useState(false);
@@ -81,16 +95,17 @@ function Main() {
                           height="60"
                           alt="User"
                         />
-                        <div className="">
+                        <div className="text-gray-500">
                           <p className="mb-0 fw-semibold">Welcome back</p>
                           <h4 className="fw-semibold mb-0 fs-4">
-                            Jhon Anderson!
+                            {/* Jhon Anderson! */}
+                            {adminName}
                           </h4>
                         </div>
                       </div>
 
                       {/* Stats Section */}
-                      <div className="d-flex align-items-center gap-5">
+                      {/* <div className="d-flex align-items-center gap-5">
                         <div>
                           <h4 className="mb-1 fw-semibold d-flex align-items-center">
                             $65.4K
@@ -126,7 +141,7 @@ function Main() {
                             ></div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                     {/* Right Section: Welcome Illustration */}
                     <div className="w-60 text-end">

@@ -82,7 +82,7 @@ function Sidebar() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img src={image} className="w-8 h-8" alt="Logo" />
-            <h5 className="text-lg font-semibold">Maxton</h5>
+            <h5 className="text-lg font-semibold">CMRS</h5>
           </div>
           {/* Close Button (visible on mobile) */}
           <button

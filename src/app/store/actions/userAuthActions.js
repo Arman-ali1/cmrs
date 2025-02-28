@@ -27,11 +27,15 @@ export const login = (credentials) => {
 	return async (dispatch) => {
 		try {
 			const response = await loginApi(credentials);
+			console.log("Login Response", response);
+			
 			const { token, user } = response.data;
 			dispatch(loginSuccess(user));
 			Cookies.set("token", token);
 			return user.role_id;
 		} catch (error) {
+			console.log("Login Error", error.response.data.message);
+			
 			dispatch(loginFailure(error.response.data.message));
 			return Promise.reject(error.response.data.message);
 		}

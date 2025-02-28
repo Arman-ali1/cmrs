@@ -46,7 +46,7 @@ export default function UsersList() {
 	const [users, setUsers] = useState([]);
 
 	useEffect(() => {
-		fetch("https://csrm.onrender.com/api/v1/user")
+		fetch("http://localhost:8000/api/v1/user")
 			.then((response) => response.json())
 			.then((data) => {
 				if (data.users) {

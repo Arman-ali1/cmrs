@@ -59,7 +59,7 @@ function ListUsers({ user, onUpdate }) {
 
     axios
       .patch(
-        `https://csrm.onrender.com/api/v1/user/update-verification/${user.id}`,
+        `http://localhost:8000/api/v1/user/update-verification/${user.id}`,
         { isVerified: updatedVerification }
       )
       .then((response) => {
@@ -157,7 +157,7 @@ export default function UsersList() {
 
   // Fetch users on component mount
   React.useEffect(() => {
-    fetch("https://csrm.onrender.com/api/v1/user")
+    fetch("http://localhost:8000/api/v1/user")
       .then((response) => response.json())
       .then((data) => {
 		console.log("Data:", data);

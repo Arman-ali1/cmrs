@@ -81,7 +81,7 @@ console.log(" admin Profile id",userdata.userAuth.user.user_id);
         text-white
       `}
     >
-      <div className="ml-80  w-80 h-96 border-2 shadow-2xl shadow-blue-400  border-blue-700 rounded flex flex-col">
+      <div className="ml-64    w-80 h-96 border-2 shadow-2xl shadow-blue-400  border-blue-700 rounded flex flex-col">
         {/* Chat Messages Container */}
         <div className="flex-1 p-3 overflow-y-auto bg-blue-950 text-black">
           {messages.length > 0 ? (
@@ -128,7 +128,7 @@ console.log(" admin Profile id",userdata.userAuth.user.user_id);
         </form>
       </div>
     </div>
-    <div className='lg:mr-28 lg:pr20'>
+    <div className='lg:mr-28 lg:pr20 w-1/2'>
 
      <Tradesuser />
     </div>

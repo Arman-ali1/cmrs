@@ -32,7 +32,7 @@ const AddUserForm = ({ onCancel }) => {
 
 		try {
 			const response = await fetch(
-				"https://csrm.onrender.com/api/v1/user/add",
+				"http://localhost:8000/api/v1/user/add",
 				{
 					method: "POST",
 					headers: {

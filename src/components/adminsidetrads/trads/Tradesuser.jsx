@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Trade.css";
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
 // import { useSelector, useDispatch } from 'react-redux';
 
 function Tradesuser() {
@@ -10,6 +11,24 @@ function Tradesuser() {
 	//   // console.log("User Profile",useSelector(state => state));
 	//   console.log("User Profile",userdata.userAuth.user.user_id);
 	//   const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
+
+	const stockSymbol = 'AAPL'; // Example stock symbol
+	const apiToken = '66766c167cbb4fa7bdcc9ecfa9574abc'; // Replace with your API token
+	// const mm=https://cloud.iexapis.com/stable/stock/AAPL/quote?token=66766c167cbb4fa7bdcc9ecfa9574abc
+	const url = `https://cloud.iexapis.com/stable/stock/${stockSymbol}/quote?token=${apiToken}`;
+	useEffect(() => {
+		axios
+		  .get(
+			"//cloud.iexapis.com/stable/stock/AAPL/quote?token=66766c167cbb4fa7bdcc9ecfa9574abc"
+		  )
+		  .then((res) => {
+			setMoedas(res.data);
+			console.log(res.data);
+		  })
+		  .catch((error) => console.log(error));
+	  }, []);
+
+
 	const location = useLocation();
 	  const { userId } = location.state || {};
 	const [trades, setTrades] = useState([]);
@@ -33,7 +52,7 @@ function Tradesuser() {
 		const fetchTrades = async () => {
 			try {
 				const response = await fetch(
-					`https://csrm.onrender.com/api/v1/trades/${userId}`
+					`http://localhost:8000/api/v1/trades/${userId}`
 				);
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
@@ -59,7 +78,7 @@ function Tradesuser() {
 	const handleAddTrade = async () => {
 		try {
 			const response = await fetch(
-				"https://csrm.onrender.com/api/v1/trades/add",
+				"http://localhost:8000/api/v1/trades/add",
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
@@ -94,7 +113,7 @@ function Tradesuser() {
 	const handleDeleteTrade = async (id) => {
 		try {
 			const response = await fetch(
-				`https://csrm.onrender.com/api/v1/trades/delete/${id}`,
+				`http://localhost:8000/api/v1/trades/delete/${id}`,
 				{
 					method: "DELETE",
 				}
@@ -131,7 +150,7 @@ function Tradesuser() {
 	}
 
 	return (
-		<div className="container mt-5   ">
+		<div className="container     ">
 			<h1 className="text-center text-white mb-4">
 				Welcome to Trades List
 			</h1>
@@ -260,7 +279,7 @@ function Tradesuser() {
 			)}
 
 			{/* Table */}
-			<div className="table-responsive">
+			<div className="table-responsive ">
 				<table className="table table-dark table-striped">
 					<thead>
 						<tr>

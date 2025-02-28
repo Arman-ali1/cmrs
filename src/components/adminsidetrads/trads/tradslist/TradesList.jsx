@@ -23,7 +23,7 @@ function TradesList() {
 		const fetchTrades = async () => {
 			try {
 				const response = await fetch(
-					"https://csrm.onrender.com/api/v1/trades"
+					"http://localhost:8000/api/v1/trades"
 				);
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
@@ -50,7 +50,7 @@ function TradesList() {
 	const handleAddTrade = async () => {
 		try {
 			const response = await fetch(
-				"https://csrm.onrender.com/api/v1/trades/add",
+				"http://localhost:8000/api/v1/trades/add",
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
@@ -72,7 +72,7 @@ function TradesList() {
 	const handleDeleteTrade = async (id) => {
 		try {
 			const response = await fetch(
-				`https://csrm.onrender.com/api/v1/trades/delete/${id}`,
+				`http://localhost:8000/api/v1/trades/delete/${id}`,
 				{
 					method: "DELETE",
 				}

@@ -110,13 +110,13 @@ const SlotCard = ({ slot, onAction, onInactive, onEdit }) => {
             >
               {state}
             </button>
-            <button
+            {slot.state!=="booked"?<button
               style={commonButtonStyle}
               className="bg-gray-500 hover:bg-blue-500"
               onClick={handleBook}
             >
               Book
-            </button>
+            </button>:null}
           </>
         ) : (
           <span>Booked</span>

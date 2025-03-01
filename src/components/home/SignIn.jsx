@@ -13,7 +13,7 @@ function SignIn({ isAuthenticated, role }) {
 	}, [isAuthenticated, role, navigate]);
 
 	return (
-		<div className="flex flex-col items-center justify-center h-screen ">
+		<div className="flex flex-col items-center justify-center h-screen  mt-20">
 			<SignUp />
 		</div>
 	);

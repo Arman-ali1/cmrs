@@ -49,7 +49,7 @@ const SlotList = () => {
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ paddingLeft: '15rem' }}>
      
      
 

@@ -103,7 +103,7 @@ const SlotCard = ({ slot, onAction, onInactive, onEdit }) => {
           style={actionButtonStyle}
           onClick={() => onAction && onAction(slot)}
         >
-          Active
+          {slot.state}
         </button>
         <button
           style={commonButtonStyle}

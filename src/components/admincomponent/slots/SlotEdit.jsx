@@ -50,7 +50,7 @@ const SlotEdit = ({ onSave, onCancel }) => {
     
     
     try {
-      const response = await axios.patch(`http://localhost:8000/api/v1/slot/edit/${slotId}`, payload);
+      const response = await axios.patch(`https://csrm.onrender.com/api/v1/slot/edit/${slotId}`, payload);
       if(response.data.success){
         // Optionally call onSave callback if provided, then navigate back
         if(onSave) {

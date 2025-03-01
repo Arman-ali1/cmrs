@@ -37,7 +37,7 @@ const Slotmanagement = () => {
     try {
       // Make the POST request using Axios
       const response = await axios.post(
-        'http://localhost:8000/api/v1/slot/add',
+        'https://csrm.onrender.com/api/v1/slot/add',
         formData,
         {
           headers: { 'Content-Type': 'application/json' }

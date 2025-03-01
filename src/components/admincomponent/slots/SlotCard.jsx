@@ -66,7 +66,7 @@ const SlotCard = ({ slot, onAction, onInactive, onEdit }) => {
   const slotId = slot.slotId;
   const handleCancel = async () => {
     try {
-      const response = await axios.delete(`http://localhost:8000/api/v1/slot/delete/${slotId}`);
+      const response = await axios.delete(`https://csrm.onrender.com/api/v1/slot/delete/${slotId}`);
       if (response.data.success) {
         alert("Slot deleted successfully");
         if (onInactive) {

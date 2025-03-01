@@ -61,7 +61,7 @@ function SignUp() {
     setMessage("");
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/user/add", {
+      const response = await fetch("https://csrm.onrender.com/api/v1/user/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

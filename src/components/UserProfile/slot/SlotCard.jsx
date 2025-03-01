@@ -71,7 +71,7 @@ const SlotCard = ({ slot, onAction, onInactive, onEdit }) => {
     // Replace with your actual user ID logic (e.g., from context or localStorage)
     const userId = "user123";
     try {
-      const response = await axios.patch(`http://localhost:8000/api/v1/slot/book/${slotId}/${userId}`);
+      const response = await axios.patch(`https://csrm.onrender.com/api/v1/slot/book/${slotId}/${userId}`);
       if (response.data.success) {
         alert("Slot booked successfully!");
         setBooked(true);

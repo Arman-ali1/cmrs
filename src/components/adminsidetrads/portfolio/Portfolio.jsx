@@ -31,7 +31,7 @@ function Portfolio() {
     const fetchPortfolios = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/v1/portfolio/${userId}`
+          `https://csrm.onrender.com/api/v1/portfolio/${userId}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -64,7 +64,7 @@ function Portfolio() {
         : "";
 
       const response = await fetch(
-        "http://localhost:8000/api/v1/portfolio/add",
+        "https://csrm.onrender.com/api/v1/portfolio/add",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -107,7 +107,7 @@ function Portfolio() {
   const handleDeletePortfolio = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/portfolios/delete/${id}`,
+        `https://csrm.onrender.com/api/v1/portfolios/delete/${id}`,
         {
           method: "DELETE",
         }

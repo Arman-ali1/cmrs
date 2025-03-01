@@ -14,7 +14,7 @@ const SlotList = () => {
     const fetchSlots = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:8000/api/v1/slot/all');
+        const response = await axios.get('https://csrm.onrender.com/api/v1/slot/all');
         console.log('API response:', response.data.sessions);
         
         // Try to extract slots array from the response.

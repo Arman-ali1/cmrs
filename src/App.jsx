@@ -28,6 +28,10 @@ import Portfolio from "./components/UserProfile/portfolio/Portfolio.jsx";
 import Tradesuser from "./components/adminsidetrads/trads/Tradesuser.jsx";
 import Portfolioall from "./components/adminsidetrads/portfolio/Portfolioall.jsx";
 import Tradesuserall from "./components/adminsidetrads/trads/Tradesuserall.jsx";
+import Slotmanagement from "./components/admincomponent/slotmanagemant/Slotmanagement.jsx";
+import SlotList from "./components/admincomponent/slots/SlotList.jsx";
+import SlotEdit from "./components/admincomponent/slots/SlotEdit.jsx";
+import UserSlotList from "./components/UserProfile/slot/UserSlotList.jsx";
 
 function App({ isAuthenticated, user, updateUser }) {
 	const [token, setToken] = useState(Cookies.get("token"));
@@ -60,6 +64,7 @@ function App({ isAuthenticated, user, updateUser }) {
 					<Route path="update-profile" element={<UpdateUserForm />} />
 					<Route path="user-trades" element={<Trades />} />
 					<Route path="user-portfolio" element={<Portfolio />} />
+					<Route path="user-slots" element={<UserSlotList />} />
 
 					<Route path="user-chat" element={<Pagelayout1 />} />
 					{/* <Route path="admin-chat" element={<AdminChatBox />} /> */}
@@ -75,6 +80,9 @@ function App({ isAuthenticated, user, updateUser }) {
 					<Route path="add-user" element={<AddUser />} />
 					<Route path="all-portfolio" element={<Portfolioall />} />
 					<Route path="all-trades-user" element={<Tradesuserall />} />
+					<Route path ="slot-management" element={<SlotList />} />
+					<Route path="add-slot" element={<Slotmanagement />} />
+					<Route path="edit-slot" element={<SlotEdit />} />
 
 					<Route path="admin-chat" element={<Pagelayout2 />} />
 				</Route>

@@ -36,6 +36,9 @@ function Sidebar() {
   const handleChat = () => {
     navigate("admin-chat");
   };
+  const handleSlotManagement = () => {
+    navigate("slot-management");
+  }
 
   return (
     <>
@@ -131,6 +134,13 @@ function Sidebar() {
                   >
                     <ChevronRightIcon className="w-4 h-4 mr-2" />
                     Portfolio
+                  </button>
+                  <button
+                    onClick={handleSlotManagement}
+                    className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg"
+                  >
+                    <ChevronRightIcon className="w-4 h-4 mr-2" />
+                    Slot Management
                   </button>
                   <button
                     onClick={handleChat}

@@ -36,6 +36,9 @@ function Sidebar() {
   const handlePortfolio = () => {
     navigate("/user-portfolio");
   };
+  const handleSlot = () => {
+    navigate("/user-slots");
+  }
 
   return (
     <>
@@ -122,6 +125,15 @@ function Sidebar() {
                   >
                     <ChevronRightIcon className="w-4 h-4 mr-2" />
                     TradsList 
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={handleSlot}
+                    className="flex text-white items-center text-sm p-2 hover:text-blue-950 hover:bg-blue-950 rounded-lg"
+                  >
+                    <ChevronRightIcon className="w-4 h-4 mr-2" />
+                    slot manage
                   </button>
                 </li>
                 <li>

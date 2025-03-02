@@ -1,0 +1,15 @@
+.tab-link-container {
+	padding-left: 25px;
+}
+
+.tab-content > div {
+	padding: 0 25px;
+}
+
+.nav-link {
+	cursor: pointer;
+}
+
+.user-title {
+	height: 50px;
+}

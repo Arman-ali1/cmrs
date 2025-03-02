@@ -3,3 +3,7 @@
 		padding-left: 200px;
 	}
 }
+
+.actions-col {
+	min-width: 130px;
+}

@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Trade.css";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 // import { useSelector, useDispatch } from 'react-redux';
 
 function Tradesuserall() {
-	
 	//   const userdata = useSelector(state => state);
 	//   // console.log("User Profile",useSelector(state => state));
 	//   console.log("User Profile",userdata.userAuth.user.user_id);
 	//   const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
 	const location = useLocation();
-	  const { userId } = location.state || {};
+	const { userId } = location.state || {};
 	const [trades, setTrades] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -29,26 +28,25 @@ function Tradesuserall() {
 	const [message, setMessage] = useState(null);
 	const [showAddTradeForm, setShowAddTradeForm] = useState(false);
 
-	useEffect(() => {
-		const fetchTrades = async () => {
-			try {
-				const response = await fetch(
-					`https://csrm.onrender.com/api/v1/trades/all-trades`
-				);
-				if (!response.ok) {
-					throw new Error("Network response was not ok");
-				}
-				const data = await response.json();
-				console.log("Full API Response:", data);
-				setTrades(Array.isArray(data) ? data : data.trades || []);
-			} catch (error) {
-				console.error("Error fetching trades:", error);
-				setError(error.message);
-			} finally {
-				setLoading(false);
+	const fetchTrades = async () => {
+		try {
+			const response = await fetch(
+				`https://csrm.onrender.com/api/v1/trades/all-trades`
+			);
+			if (!response.ok) {
+				throw new Error("Network response was not ok");
 			}
-		};
+			const data = await response.json();
+			setTrades(Array.isArray(data) ? data : data.trades || []);
+		} catch (error) {
+			console.error("Error fetching trades:", error);
+			setError(error.message);
+		} finally {
+			setLoading(false);
+		}
+	};
 
+	useEffect(() => {
 		fetchTrades();
 	}, []);
 
@@ -69,9 +67,8 @@ function Tradesuserall() {
 			if (!response.ok) {
 				throw new Error("Failed to add trade");
 			}
-			const addedTrade = await response.json();
-			setTrades([...trades, addedTrade]);
 			setMessage("Trade added successfully");
+			fetchTrades();
 			// Reset the form
 			setNewTrade({
 				user_id: userId,
@@ -102,8 +99,8 @@ function Tradesuserall() {
 			if (!response.ok) {
 				throw new Error("Failed to delete trade");
 			}
-			setTrades(trades.filter((trade) => trade.id !== id));
 			setMessage("Trade deleted successfully");
+			fetchTrades();
 		} catch (error) {
 			console.error("Error deleting trade:", error);
 			setMessage("Failed to delete trade");

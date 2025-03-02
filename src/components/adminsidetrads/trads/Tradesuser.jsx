@@ -1,36 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Trade.css";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 // import { useSelector, useDispatch } from 'react-redux';
 
 function Tradesuser() {
-
 	//   const userdata = useSelector(state => state);
 	//   // console.log("User Profile",useSelector(state => state));
 	//   console.log("User Profile",userdata.userAuth.user.user_id);
 	//   const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
 
-	const stockSymbol = 'AAPL'; // Example stock symbol
-	const apiToken = '66766c167cbb4fa7bdcc9ecfa9574abc'; // Replace with your API token
+	const stockSymbol = "AAPL"; // Example stock symbol
+	const apiToken = "66766c167cbb4fa7bdcc9ecfa9574abc"; // Replace with your API token
 	// const mm=https://cloud.iexapis.com/stable/stock/AAPL/quote?token=66766c167cbb4fa7bdcc9ecfa9574abc
 	const url = `https://cloud.iexapis.com/stable/stock/${stockSymbol}/quote?token=${apiToken}`;
 	useEffect(() => {
 		axios
-		  .get(
-			"//cloud.iexapis.com/stable/stock/AAPL/quote?token=66766c167cbb4fa7bdcc9ecfa9574abc"
-		  )
-		  .then((res) => {
-			setMoedas(res.data);
-			console.log(res.data);
-		  })
-		  .catch((error) => console.log(error));
-	  }, []);
-
+			.get(
+				"//cloud.iexapis.com/stable/stock/AAPL/quote?token=66766c167cbb4fa7bdcc9ecfa9574abc"
+			)
+			.then((res) => {
+				setMoedas(res.data);
+				console.log(res.data);
+			})
+			.catch((error) => console.log(error));
+	}, []);
 
 	const location = useLocation();
-	  const { userId } = location.state || {};
+	const { userId } = location.state || {};
 	const [trades, setTrades] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -291,7 +289,7 @@ function Tradesuser() {
 							<th>Leverage</th>
 							<th>Investment Amount</th>
 							<th>Trade Date</th>
-							<th>Actions</th>
+							<th className="actions-col">Actions</th>
 						</tr>
 					</thead>
 					<tbody>

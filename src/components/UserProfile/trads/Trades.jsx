@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Trade.css";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
 function Trades() {
-
-	  const userdata = useSelector(state => state);
-	  // console.log("User Profile",useSelector(state => state));
-	  console.log("User Profile",userdata.userAuth.user.user_id);
-	  const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
+	const userdata = useSelector((state) => state);
+	// console.log("User Profile",useSelector(state => state));
+	console.log("User Profile", userdata.userAuth.user.user_id);
+	const [userId, setUserId] = useState(userdata.userAuth.user.user_id);
 	const [trades, setTrades] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -269,7 +268,7 @@ function Trades() {
 							<th>Leverage</th>
 							<th>Investment Amount</th>
 							<th>Trade Date</th>
-							<th>Actions</th>
+							<th className="actions-col">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
